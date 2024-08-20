@@ -9,19 +9,23 @@ import javax.annotation.PostConstruct;
 @SpringBootApplication
 public class Application {
 
+    private static final Logger log = LoggerFactory.getLogger(Application.class);
+
     public static void main(String[] args)
     {
         SpringApplication.run(Application.class, args);
+        log.info("Welcome to the Spring Boot Application! Let's have some fun!");
     }
 
     @PostConstruct
     public void init()
     {
-        Logger log = LoggerFactory.getLogger(Application.class);
         log.info("Java app started");
+        log.info("My name is Benjamin Baden, and I am a DevOps engineer!");
+        log.info("Let's automate all the things and keep the code flowing smoothly!");
     }
 
     public String getStatus() {
-        return "OK";
+        return "OK - All systems are go!";
     }
 }
